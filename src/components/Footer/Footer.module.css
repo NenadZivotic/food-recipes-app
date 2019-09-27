@@ -1,0 +1,25 @@
+.footer {
+    height: 100px;
+    display: block;
+    margin-top: calc(30vh - 100px);
+}
+
+.logo {
+    height: 100px;
+}
+
+.facebook {
+    height: 35px;
+    float: right;
+    margin: 30px;
+}
+
+.instagram {
+    height: 35px;
+    float: right;
+    margin: 30px;
+}
+
+.copyright {
+    text-align: center;
+}

@@ -1,0 +1,27 @@
+.contactContainer {
+    background-color: rgb(245, 245, 245);
+    margin-top: 300px;
+  }
+  
+  .contactH1 {
+    text-align: "center";
+    border-bottom: 2px solid gray;
+    width: 9rem;
+  }
+  
+  .contactButton {
+    margin-top: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 10px;
+    background-color: rgb(233, 161, 27);
+    color: white;
+    border-color: rgb(233, 161, 27);
+    border-style: solid;
+  }
+  
+  @media only screen and (max-width: 1020px) {
+    .contactButton {
+        padding-right: 15x;
+    }
+  }

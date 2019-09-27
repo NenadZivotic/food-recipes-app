@@ -1,0 +1,162 @@
+.homeHeader {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10%;
+}
+
+.homeHeader div {
+    padding: 30px;
+}
+
+.title {
+    margin-left: 15%;
+}
+
+.aboutHome {
+    margin-left: 15%;
+    width: 30%;
+}
+
+.homeImg {
+    width: 500px;
+    height: 500px;
+    margin-right: 200px;
+    margin-bottom: 200px;
+}
+
+.homeButton {
+    padding: 10px 25px;
+    background: rgb(253, 173, 24);
+    border-radius: 10px;
+    border: 0;
+    color: white;
+    margin-top: 12%;
+    margin-left: 15%;
+}
+
+.category {
+    margin-top: 120px;
+    margin-bottom: 120px;
+    background-color: rgb(245, 245, 245);
+}
+
+.recipeTitle {
+    text-align: center;
+}
+
+.aboutUsCont {
+    display: inline-table;
+    margin-left: 20px;
+}
+
+.aboutUsHeader {
+    margin-bottom: 50px;
+    border-bottom: 2px solid gray;
+    width: 11rem;
+}
+
+.aboutUsText {
+    width: 500px;
+    margin: 0;
+}
+
+.contactContainer {
+    display: block;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+  }
+  
+  .contactH1 {
+    text-align: center;
+    font-weight: 500;
+    font-size: 2rem;
+    padding: 5px;
+    border-bottom: 2px solid gray;
+    margin-left: 160px;
+    width: 30%;
+  }
+  
+  .contactInput {
+    margin: 10px;
+    border-radius: 10px;
+    padding: 12px;
+    width: 100%;
+    outline: none;
+    box-shadow: 0 0 0 0;
+  }
+  
+  .contactTextArea {
+    width: 100%;
+    margin: 10px;
+    margin-top: 30px;
+    border-radius: 10px;
+    padding: 12px;
+  }
+  
+  .contactButton {
+    margin-left: 32%;
+    margin-top: 20px;
+    padding: 15px 80px;
+    border-radius: 10px;
+    background-color: rgb(233, 161, 27);
+    color: white;
+    border-color: rgb(233, 161, 27);
+    border-style: solid;
+  }
+  
+
+@media screen and (min-width: 445px) and (max-width: 1470px) {
+    .homeHeader {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .homeImg {
+        margin: auto;
+    }
+    .aboutHome {
+        width: 100%;
+        margin: auto;
+        text-align: center;
+    }
+    .title {
+        text-align: center;
+        margin-left: 0;
+    }
+    .homeButton {
+        margin-left: 40%;
+    }
+}
+
+@media only screen and (max-width: 444px) {
+    .homeButton {
+        position: relative;
+        margin-left: 125px;
+        margin-top: 100px;
+    }
+    .title {
+        text-align: center;
+        margin: auto;
+    }
+    .aboutHome {
+        text-align: center;
+        margin: auto;
+    }
+    .homeHeader {
+        margin-top: 200px;
+        margin-bottom: 100px;
+    }
+}
+
+@media only screen and (max-width: 1160px) {
+    .aboutUsImg {
+        width: 400px!important;
+    }
+}
+
+@media only screen and (max-width: 816px) {
+    .aboutUsImg {
+        width: 250px!important;
+    }
+}
