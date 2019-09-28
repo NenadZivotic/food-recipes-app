@@ -43,6 +43,58 @@
   margin-right: 50px;
 }
 
+.loginForm {
+  position: absolute;
+  right: 10px;
+  top: 65px;
+  border: 1px solid black;
+  box-shadow: 3px 3px 3px gray;
+  width: 350px;
+  height: 150px;
+  border-radius: 10px;
+}
+
+.logoutForm {
+  position: absolute;
+  right: 10px;
+  top: 65px;
+  border: 1px solid black;
+  box-shadow: 3px 3px 3px gray;
+  width: 250px;
+  height: 100px;
+  border-radius: 10px;
+}
+
+.formInput {
+  margin-bottom: 5px;
+  border-radius: 10px;
+  text-align: center;
+  font-weight: 600;
+  color: black;
+  outline: none;
+}
+
+.formButton {
+  margin-left: 45%;
+  width: 175px;
+  height: 35px;
+  border-radius: 10px;
+  background-color: rgb(233, 161, 27);
+  border: 0;
+  color: white;
+}
+
+.logoutFormButton {
+  margin-left: 25%;
+  margin-top: 8%;
+  width: 175px;
+  height: 35px;
+  border-radius: 10px;
+  background-color: rgb(233, 161, 27);
+  border: 0;
+  color: white;
+}
+
 @media only screen and (max-width: 541px) {
   .right {
     position: absolute;
