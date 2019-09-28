@@ -134,7 +134,7 @@ class Header extends Component {
             <form onSubmit={this.state.loginHandler}>
                 {this.state.logged ? (
                   <div>
-                  <h5 style={{marginTop: '10px', marginLeft: '30px'}}>We are sorry you are leaving! :(</h5>
+                  <h5 className={styles.leaving}>We are sorry you are leaving! :(</h5>
                   <button
                     onClick={this.logoutHandler}
                     className={styles.logoutFormButton}

@@ -5,3 +5,21 @@
 .SingleMealImg {
   width: 300px;
 }
+
+.ingredientsOuter {
+  margin-top: 40px;
+}
+
+.ingredients {
+  width: 300px;
+  padding-left: 30px;
+}
+
+.measures {
+  width: 300px;
+  padding-left: 30px;
+}
+
+ol {
+  padding: 15px;
+}

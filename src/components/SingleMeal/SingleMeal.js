@@ -66,7 +66,7 @@ class SingleMeal extends Component {
                       </b>
                     </h5>
                     <p>
-                      <b>Category</b>: {recipe.strCategory}
+                      <b>Category:</b> {recipe.strCategory}
                     </p>
                     <p>
                       <b>Country:</b> {recipe.strArea}
@@ -83,30 +83,28 @@ class SingleMeal extends Component {
                     <p>{recipe.strInstructions}</p>
                   </div>
 
-                  <div className="row" style={{ marginTop: "40px" }}>
+                  <div className={`row ${styles.ingredientsOuter}`}>
                     <div
-                      className="col-md-4 "
-                      style={{ width: "300px", paddingLeft: "30px" }}
+                      className={`col-md-4 ${styles.ingredients}`}
                     >
                       <h6>Ingredients:</h6>
-                      <ul>
+                      <ol>
                         <li>{recipe.strIngredient1}</li>
                         <li>{recipe.strIngredient2}</li>
                         <li>{recipe.strIngredient3}</li>
                         <li>{recipe.strIngredient4}</li>
-                      </ul>
+                      </ol>
                     </div>
                     <div
-                      className="col-md-4"
-                      style={{ width: "300px", paddingLeft: "30px" }}
+                      className={`col-md-4 ${styles.measures}`}
                     >
                       <h6>Measure:</h6>
-                      <ul>
+                      <ol>
                         <li>{recipe.strMeasure1}</li>
                         <li>{recipe.strMeasure2}</li>
                         <li>{recipe.strMeasure3}</li>
                         <li>{recipe.strMeasure4}</li>
-                      </ul>
+                      </ol>
                     </div>
                   </div>
                 </div>
