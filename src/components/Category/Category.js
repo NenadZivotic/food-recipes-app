@@ -57,14 +57,6 @@ class Category extends Component {
         this.setState(
           {
             recipes: res.meals
-          },
-          () => {
-            if (this.state.searchTerm !== "") {
-              localStorage.setItem(
-                "searchRecipe",
-                JSON.stringify(this.state.recipes)
-              );
-            }
           }
         );
       });
@@ -77,23 +69,6 @@ class Category extends Component {
     this.timeout = setTimeout(() => {
       this.searchItems(this.state.value);
     }, 500);
-  };
-
-  getData = () => {
-    const retrievedData = JSON.parse(localStorage.getItem("searchRecipe"));
-
-    return (
-      <div>
-        {retrievedData.map(res => {
-          return (
-            <div key={res.idMeal}>
-              <img src={res.strMealThumb} alt="meal" />
-              <h6>{res.strMeal}</h6>
-            </div>
-          );
-        })}
-      </div>
-    );
   };
 
   render() {

@@ -1,0 +1,59 @@
+.dropButton {
+    float: right;
+    margin-top: 100%;
+    background-color: white;
+    color: black;
+}
+
+.container {
+    margin-top: 150px;
+}
+
+.reco {
+    margin-bottom: 50px;
+}
+
+.recoImg {
+    width: 400px;
+    margin-top: 50px;
+}
+
+.category {
+    margin-top: 30px;
+}
+
+.reqContainer {
+    background-color: rgb(245, 245, 245);
+}
+
+.reqMeal {
+    margin-top: 200px;
+    margin-bottom: 150px;
+    padding-top: 30px;
+    text-align: center;
+}
+
+.reqMealTitle {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.reqImg {
+    width: 400px;
+    margin-bottom: 50px;
+}
+
+.reqCategory {
+    text-align: center;
+}
+
+.reqArea {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+@media only screen and (max-width: 768px) {
+    .dropButton {
+        margin-top: 0;
+    }
+}

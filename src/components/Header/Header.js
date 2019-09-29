@@ -2,14 +2,16 @@ import React, { Component } from "react";
 import styles from "./Header.module.css";
 import { HashLink } from "react-router-hash-link";
 import { Link, withRouter } from "react-router-dom";
-import Swal from 'sweetalert2';
+import Swal from "sweetalert2";
+import axios from "axios";
 
 class Header extends Component {
   state = {
     password: "",
     email: "",
     showForm: false,
-    logged: false
+    logged: false,
+    searchMeal: ""
   };
 
   toggleForm = e => {
@@ -32,13 +34,13 @@ class Header extends Component {
 
     if (!userEmail || !password) {
       alert("Please fill in Login form!");
-      localStorage.setItem("email", '');
-      localStorage.setItem("password", '');
+      localStorage.setItem("email", "");
+      localStorage.setItem("password", "");
       this.setState({
         logged: false
       });
     } else {
-      Swal.fire(`Welcome!`)
+      Swal.fire(`Welcome!`);
     }
 
     this.valuesHandler();
@@ -50,8 +52,8 @@ class Header extends Component {
       logged: false,
       showForm: false
     });
-    localStorage.setItem("email", '');
-    localStorage.setItem("password", '');
+    localStorage.setItem("email", "");
+    localStorage.setItem("password", "");
   };
 
   valuesHandler = e => {
@@ -62,6 +64,11 @@ class Header extends Component {
       email,
       password
     });
+  };
+
+  onSearch = e => {
+    const value = document.getElementById("filter").value;
+    this.props.history.push(`/search/${value}`);
   };
 
   render() {
@@ -108,7 +115,10 @@ class Header extends Component {
                 placeholder="Search recipes"
                 className={styles.searchBox}
               />
-              <i className={`fa fa-search ${styles.filterSubmit}`}></i>
+              <i
+                onClick={this.onSearch}
+                className={`fa fa-search ${styles.filterSubmit}`}
+              ></i>
               <div className={styles.right}>
                 <HashLink to="/#aboutUs">
                   <p className={styles.aboutUs} style={{ color: "black" }}>
@@ -132,43 +142,45 @@ class Header extends Component {
         {this.state.showForm ? (
           <div className={styles.loginForm}>
             <form onSubmit={this.state.loginHandler}>
-                {this.state.logged ? (
-                  <div>
-                  <h5 className={styles.leaving}>We are sorry you are leaving! :(</h5>
+              {this.state.logged ? (
+                <div>
+                  <h5 className={styles.leaving}>
+                    We are sorry you are leaving! :(
+                  </h5>
                   <button
                     onClick={this.logoutHandler}
                     className={styles.logoutFormButton}
                   >
                     Logout
                   </button>
-                  </div>
-                ) : (
-                  <div className="text-center" style={{ marginTop: "10%" }}>
-                <input
-                  className={styles.formInput}
-                  type="email"
-                  id="email"
-                  placeholder="Your Email:"
-                  required
-                  onChange={this.valuesHandler}
-                />
-                <input
-                  className={styles.formInput}
-                  type="password"
-                  id="pass"
-                  placeholder="Your Password:"
-                  required
-                  onChange={this.valuesHandler}
-                />
-                <br />
+                </div>
+              ) : (
+                <div className="text-center" style={{ marginTop: "10%" }}>
+                  <input
+                    className={styles.formInput}
+                    type="email"
+                    id="email"
+                    placeholder="Your Email:"
+                    required
+                    onChange={this.valuesHandler}
+                  />
+                  <input
+                    className={styles.formInput}
+                    type="password"
+                    id="pass"
+                    placeholder="Your Password:"
+                    required
+                    onChange={this.valuesHandler}
+                  />
+                  <br />
                   <button
                     onClick={this.loginHandler}
                     className={styles.formButton}
                   >
                     Login
                   </button>
-                  </div>
-                )}
+                </div>
+              )}
             </form>
           </div>
         ) : null}
