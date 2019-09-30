@@ -14,7 +14,8 @@
     "react-router-hash-link": "^1.2.2",
     "react-scripts": "3.1.2",
     "sweetalert2": "^8.17.6",
-    "uuid": "^3.3.3"
+    "uuid": "^3.3.3",
+    "node": "14.4.0"
   },
   "scripts": {
     "start": "node server.js",
