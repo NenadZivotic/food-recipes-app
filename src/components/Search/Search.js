@@ -7,7 +7,8 @@ class Search extends Component {
     random: [],
     recipes: [],
     search: this.props.match.params.meal,
-    meals: []
+    meals: [],
+    category: ''
   };
 
   componentDidMount() {
@@ -28,8 +29,6 @@ class Search extends Component {
           meals: res.data.meals
         });
       });
-
-    console.log(this.state.search);
   }
 
   render() {
@@ -56,13 +55,13 @@ class Search extends Component {
                 </div>
                 <div className="col text-center">
                   <div className="dropdown">
-                    <button
-                      className={`btn btn-secondary dropdown-toggle ${styles.dropButton}`}
-                      type="button"
-                      id="dropdownMenuButton"
-                    >
-                      Category
-                    </button>
+                      <button
+                        className={`btn btn-secondary dropdown-toggle ${styles.dropButton}`}
+                        type="button"
+                        id="dropdownMenuButton"
+                      >
+                        Category
+                      </button>
                   </div>
                 </div>
               </div>
@@ -70,9 +69,7 @@ class Search extends Component {
           })}
         </div>
         <div className={`container ${styles.reqContainer}`}>
-          <h1 className={`${styles.reqMeal}`}>
-            Your requested meals:
-          </h1>
+          <h1 className={`${styles.reqMeal}`}>Your requested meals:</h1>
           {this.state.meals.map(meal => {
             return (
               <div className="row" key={meal.idMeal}>

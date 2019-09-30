@@ -52,7 +52,6 @@ class SingleMeal extends Component {
                 <div className="row" key={recipe.idMeal}>
                   <div className="col-md-4">
                     <h1>{recipe.strMeal}</h1>
-
                     <img
                       src={recipe.strMealThumb}
                       alt="mealImg"
@@ -99,12 +98,12 @@ class SingleMeal extends Component {
                       className={`col-md-4 ${styles.measures}`}
                     >
                       <h6>Measure:</h6>
-                      <ol>
+                      <ul>
                         <li>{recipe.strMeasure1}</li>
                         <li>{recipe.strMeasure2}</li>
                         <li>{recipe.strMeasure3}</li>
                         <li>{recipe.strMeasure4}</li>
-                      </ol>
+                      </ul>
                     </div>
                   </div>
                 </div>

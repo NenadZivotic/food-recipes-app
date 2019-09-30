@@ -23,3 +23,8 @@
 ol {
   padding: 15px;
 }
+
+ul {
+  list-style: none;
+  padding: 15px;
+}
