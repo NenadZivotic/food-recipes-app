@@ -8,7 +8,7 @@ class Search extends Component {
     recipes: [],
     search: this.props.match.params.meal,
     meals: [],
-    category: ''
+    category: ""
   };
 
   componentDidMount() {
@@ -55,13 +55,13 @@ class Search extends Component {
                 </div>
                 <div className="col text-center">
                   <div className="dropdown">
-                      <button
-                        className={`btn btn-secondary dropdown-toggle ${styles.dropButton}`}
-                        type="button"
-                        id="dropdownMenuButton"
-                      >
-                        Category
-                      </button>
+                    <button
+                      className={`btn btn-secondary dropdown-toggle ${styles.dropButton}`}
+                      type="button"
+                      id="dropdownMenuButton"
+                    >
+                      Category
+                    </button>
                   </div>
                 </div>
               </div>
@@ -70,26 +70,31 @@ class Search extends Component {
         </div>
         <div className={`container ${styles.reqContainer}`}>
           <h1 className={`${styles.reqMeal}`}>Your requested meals:</h1>
-          {this.state.meals.map(meal => {
-            return (
-              <div className="row" key={meal.idMeal}>
-                <div className="col">
-                  <h2 className={`${styles.reqMealTitle}`}>{meal.strMeal}</h2>
-                  <img
-                    src={meal.strMealThumb}
-                    alt="meal"
-                    className={`rounded mx-auto d-block ${styles.reqImg}`}
-                  />
-                  <p className={`${styles.reqCategory}`}>
-                    <b>Category:</b> {meal.strCategory}
-                  </p>
-                  <p className={`${styles.reqArea}`}>
-                    <b>Country:</b> {meal.strArea}
-                  </p>
-                </div>
-              </div>
-            );
-          })}
+          {this.state.meals === null
+            ? (this.props.history.location.pathname = "*")
+            : this.state.meals.map(meal => {
+                return (
+                  <div className="row" key={meal.idMeal}>
+                    <div className="col">
+                      <h2 className={`${styles.reqMealTitle}`}>
+                        {meal.strMeal}
+                      </h2>
+                      <img
+                        src={meal.strMealThumb}
+                        alt="meal"
+                        className={`rounded mx-auto d-block ${styles.reqImg}`}
+                      />
+                      <p className={`${styles.reqCategory}`}>
+                        <b>Category:</b> {meal.strCategory}
+                      </p>
+                      <p className={`${styles.reqArea}`}>
+                        <b>Country:</b> {meal.strArea}
+                      </p>
+                    </div>
+                  </div>
+                );
+              })}
+          }
         </div>
       </div>
     );
