@@ -63,6 +63,7 @@ class Header extends Component {
     const email = document.getElementById("email").value;
     const password = document.getElementById("pass").value;
 
+    // eslint-disable-next-line
     if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
       this.setState({
         email,
