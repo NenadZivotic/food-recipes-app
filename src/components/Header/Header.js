@@ -3,7 +3,6 @@ import styles from "./Header.module.css";
 import { HashLink } from "react-router-hash-link";
 import { Link, withRouter } from "react-router-dom";
 import Swal from "sweetalert2";
-import axios from "axios";
 
 class Header extends Component {
   state = {
@@ -13,6 +12,10 @@ class Header extends Component {
     logged: false,
     searchMeal: ""
   };
+
+  componentDidMount() {
+    this.checkIfLoggedIn();
+  }
 
   toggleForm = e => {
     this.setState({
@@ -60,15 +63,27 @@ class Header extends Component {
     const email = document.getElementById("email").value;
     const password = document.getElementById("pass").value;
 
-    this.setState({
-      email,
-      password
-    });
+    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
+      this.setState({
+        email,
+        password
+      });
+    } else {
+      return false;
+    }
   };
 
   onSearch = e => {
     const value = document.getElementById("filter").value;
     this.props.history.push(`/search/${value}`);
+  };
+
+  checkIfLoggedIn = () => {
+    if (localStorage.getItem("email") && localStorage.getItem("password")) {
+      this.setState({
+        logged: true
+      });
+    }
   };
 
   render() {
@@ -160,6 +175,7 @@ class Header extends Component {
                     className={styles.formInput}
                     type="email"
                     id="email"
+                    name="email"
                     placeholder="Your Email:"
                     required
                     onChange={this.valuesHandler}
