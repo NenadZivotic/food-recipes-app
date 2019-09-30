@@ -1,7 +1,6 @@
 .footer {
     height: 100px;
     display: block;
-    margin-top: calc(30vh - 100px);
 }
 
 .logo {
